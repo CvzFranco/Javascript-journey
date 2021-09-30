@@ -339,37 +339,196 @@
  * Object Method
  */
 
-const jonas = {
-  firstName: "Jonas ",
-  lastName: `Test`,
-  birthYear: 1991,
-  job: `teacher`,
-  friends: [`Michael`, `Peter`, `Steven`],
-  hasDriversLicense: true,
+// const jonas = {
+//   firstName: "Jonas ",
+//   lastName: `Test`,
+//   birthYear: 1991,
+//   job: `teacher`,
+//   friends: [`Michael`, `Peter`, `Steven`],
+//   hasDriversLicense: true,
 
-  //   calcAge: function (birthYear) {
-  //     return 2037 - birthYear;
-  //   },
-  //   calcAge: function () {
-  //     console.log(this);
-  //     return 2037 - this.birthYear;
-  //   },
-  calcAge: function () {
-    this.age = 2037 - this.birthYear;
-    return this.age;
-  },
+//   //   calcAge: function (birthYear) {
+//   //     return 2037 - birthYear;
+//   //   },
+//   //   calcAge: function () {
+//   //     console.log(this);
+//   //     return 2037 - this.birthYear;
+//   //   },
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()} - year old ${
-      jonas.job
-    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
-  },
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()} - year old ${
+//       jonas.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
+// };
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
+
+// //Challenge
+
+// console.log(jonas.getSummary());
+
+/**
+ * CHALLENGE 3
+ */
+
+// const mark = {
+//   fullName: "Mark Miller ",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
+// const john = {
+//   fullName: "John Smith ",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
+
+// mark.calcBMI();
+// john.calcBMI();
+// console.log(mark.bmi, john.bmi);
+
+// if (mark.bmi > john.bmi) {
+//   console.log(
+//     `${mark.fullName}'s BMI (${mark.bmi}) is highter than ${john.fullName}'s bmi (${john.bmi})`
+//   );
+// } else if (john.bmi > mark.bmi) {
+//   console.log(
+//     `${jon.fullName}'s bmi (${john.bmi}) is highter than ${mark.fullName}'s bmi (${mark.bmi})`
+//   );
+// }
+
+// console.log("Lifting weights repetition 1 ");
+// console.log("Lifting weights repetition 2 ");
+// console.log("Lifting weights repetition 3 ");
+// console.log("Lifting weights repetition 4 ");
+// console.log("Lifting weights repetition 5 ");
+// console.log("Lifting weights repetition 6 ");
+// console.log("Lifting weights repetition 7 ");
+// console.log("Lifting weights repetition 8 ");
+// console.log("Lifting weights repetition 9 ");
+// console.log("Lifting weights repetition 10 ");
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+// const jonas = [
+//   "Jonas",
+//   "Test",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter"],
+//   true,
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < jonas.length; i++) {
+//   types.push(typeof jonas[i]);
+//   console.log(jonas[i], types[i]);
+// }
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+//continue and break
+
+// console.log("---ONLY STRINGS---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== "string") continue;
+
+//   console.log(jonas[i], types[i]);
+// }
+// console.log("---BREAK WITH NUMBER---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] === "number") break;
+
+//   console.log(jonas[i], types[i]);
+// }
+
+// Looping backwards and loops in loops
+// const jonas = [
+//   "Jonas",
+//   "Test",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter"],
+//   true,
+// ];
+
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(jonas[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`----Startgin exercise ${exercise} ----`);
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Exercise ${exercise} :lifting weight repetition ${rep}`);
+//   }
+// }
+
+//while loop
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weights repetition ${rep}`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log(`Loop is about to end...`);
+// }
+
+/**
+ * Challenge 4
+ */
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
-console.log(jonas.calcAge());
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
 
-//Challenge
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
 
-console.log(jonas.getSummary());
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+
+console.log(bills, tips, totals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i]
+    sum += arr[i];
+  }
+  console.log(sum);
+  return sum / arr.length;
+};
+
+console.log(calcAverage(bills));
