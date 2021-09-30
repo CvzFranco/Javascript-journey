@@ -242,32 +242,134 @@
  * Basic array operations
  */
 
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-//Add elements
-const newLength = friends.push("Franco");
-console.log(friends);
-console.log(newLength);
-friends.unshift("John");
-console.log(friends);
+// //Add elements
+// const newLength = friends.push("Franco");
+// console.log(friends);
+// console.log(newLength);
+// friends.unshift("John");
+// console.log(friends);
 
-//remve elements
-friends.pop(); // last
-const popped = friends.pop(); // last
-console.log(popped);
-console.log(friends);
+// //remve elements
+// friends.pop(); // last
+// const popped = friends.pop(); // last
+// console.log(popped);
+// console.log(friends);
 
-friends.shift(); // first
-console.log(friends);
+// friends.shift(); // first
+// console.log(friends);
 
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("Bob"));
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("Bob"));
 
-friends.push(23);
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
-console.log(friends.includes(23));
+// friends.push(23);
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("Bob"));
+// console.log(friends.includes(23));
 
-if (friends.includes("Steven")) {
-  console.log("You have a friends called peter");
-}
+// if (friends.includes("Steven")) {
+//   console.log("You have a friends called peter");
+// }
+
+/** 30/09/21
+ * Started at 4:12am
+ */
+
+/**
+ * CHALLENGE
+ */
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(bills, tips);
+
+/**
+ * Introdution to object
+ */
+
+//  const jonas = {
+//     firstName: 'Jonas ',
+//     lastName : `Test`,
+//     age: 2037 - 1991,
+//     job : `teacher`,
+//     friends:  [`Michael`,`Peter`,`Steven`] };
+
+/**
+ * dot vs bracket notation
+ */
+
+// const jonas = {
+//   firstName: "Jonas ",
+//   lastName: `Test`,
+//   age: 2037 - 1991,
+//   job: `teacher`,
+//   friends: [`Michael`, `Peter`, `Steven`],
+// };
+
+// console.log(jonas);
+
+// console.log(jonas.lastName);
+// console.log(jonas["lastName"]);
+
+// const nameKey = "Name";
+// console.log(jonas["first" + nameKey]);
+// console.log(jonas["last" + nameKey]);
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas?Choose between firstName,LastName, age ,job , and friends"
+// );
+
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log(
+//     `Wrong request !Choose between firstName,LastName, age ,job , and friends`
+//   );
+// }
+
+// jonas.location = "Portugal";
+// jonas["twitter"] = "@franco.dev";
+// console.log(jonas);
+
+/**
+ * Object Method
+ */
+
+const jonas = {
+  firstName: "Jonas ",
+  lastName: `Test`,
+  birthYear: 1991,
+  job: `teacher`,
+  friends: [`Michael`, `Peter`, `Steven`],
+  hasDriversLicense: true,
+
+  //   calcAge: function (birthYear) {
+  //     return 2037 - birthYear;
+  //   },
+  //   calcAge: function () {
+  //     console.log(this);
+  //     return 2037 - this.birthYear;
+  //   },
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} - year old ${
+      jonas.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
+};
+console.log(jonas.calcAge());
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+//Challenge
+
+console.log(jonas.getSummary());
