@@ -107,14 +107,14 @@ const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 //Strings needs to contain day (index + 1)
 //Add ... between elements and start and end of string
 
-const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
+// const data1 = [17, 21, 23];
+// const data2 = [12, 5, -5, 0, 4];
 
-const prnitForecast = function (arr) {
-  let str = '';
-  for (let i = 0; i < arr.length; i++) {
-    str = str + `${arr[i]}°C in ${i + 1} days ... `;
-  }
-  console.log('... ' + str);
-};
-prnitForecast(data1);
+// const prnitForecast = function (arr) {
+//   let str = '';
+//   for (let i = 0; i < arr.length; i++) {
+//     str = str + `${arr[i]}°C in ${i + 1} days ... `;
+//   }
+//   console.log('... ' + str);
+// };
+// prnitForecast(data1);
