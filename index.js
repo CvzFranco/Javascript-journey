@@ -67,23 +67,54 @@ const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
  * DEBUGING
  */
 
-const measureKelvin = function () {
-  const measurement = {
-    type: 'temp',
-    unit: 'celsius',
-    //C) Fix
-    value: Number(prompt('Degrees celsius :')),
-  };
+// const measureKelvin = function () {
+//   const measurement = {
+//     type: 'temp',
+//     unit: 'celsius',
+//     //C) Fix
+//     value: Number(prompt('Degrees celsius :')),
+//   };
 
-  //   console.log(measurement);
-  console.table(measurement);
-  //   console.log(measurement.value);
-  //   console.warn(measurement.value);
-  //   console.error(measurement.value);
-  const kelvin = measurement.value + 273;
-  return kelvin;
+//   //   console.log(measurement);
+//   console.table(measurement);
+//   //   console.log(measurement.value);
+//   //   console.warn(measurement.value);
+//   //   console.error(measurement.value);
+//   const kelvin = measurement.value + 273;
+//   return kelvin;
+// };
+
+// //A) Identify
+
+// console.log(measureKelvin());
+
+/**
+ * 2/10/21 start at 6h11
+ */
+
+/**
+ * CHALLENGE
+ */
+
+//1) Understanding the problem
+// - Array transformed to string , separated by ...
+// - Why is the X days ? answer : index + 1
+
+// 2 ) Breaking up into sub-problems
+
+//Transform array into string
+//Transform each element to string with °C
+//Strings needs to contain day (index + 1)
+//Add ... between elements and start and end of string
+
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+const prnitForecast = function (arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str = str + `${arr[i]}°C in ${i + 1} days ... `;
+  }
+  console.log('... ' + str);
 };
-
-//A) Identify
-
-console.log(measureKelvin());
+prnitForecast(data1);
