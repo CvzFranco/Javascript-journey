@@ -45,45 +45,89 @@
  *  HOISTING AND TDZ IN PRATICE
  */
 
-//Variables
-console.log(me);
-// console.log(job);
-// console.log(year);
+// //Variables
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
 
-var me = 'Jonas';
-let job = 'teacher';
-const year = 1991;
+// var me = 'Jonas';
+// let job = 'teacher';
+// const year = 1991;
 
-//Functions
-console.log(addDecl(2, 3));
-// console.log(addExpr(2, 3));
-console.log(addArrow);
-// console.log(addArrow(2, 3));
-//Function declaration
-function addDecl(a, b) {
-  return a + b;
-}
+// //Functions
+// console.log(addDecl(2, 3));
+// // console.log(addExpr(2, 3));
+// console.log(addArrow);
+// // console.log(addArrow(2, 3));
+// //Function declaration
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-//Function expression
-const addExpr = function (a, b) {
-  return a + b;
-};
-var addArrow = (a, b) => a + b;
+// //Function expression
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+// var addArrow = (a, b) => a + b;
 
-//Example
-// console.log(numProduct);
-if (!numProducts) deleteShoppingCart();
+// //Example
+// // console.log(numProduct);
+// if (!numProducts) deleteShoppingCart();
 
-var numProducts = 10;
+// var numProducts = 10;
 
-function deleteShoppingCart() {
-  console.log('All products deleted');
-}
+// function deleteShoppingCart() {
+//   console.log('All products deleted');
+// }
 
-var x = 1;
-let y = 2;
-const z = 3;
+// var x = 1;
+// let y = 2;
+// const z = 3;
 
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+// console.log(x === window.x);
+// console.log(y === window.y);
+
+// console.log(z === window.z);
+
+/**
+ * THIS KEYWORD
+ */
+
+//global object
+// console.log(this);
+
+// //Undefined
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(1991);
+
+// //Global
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   //   console.log(this);
+// };
+// calcAgeArrow(1991);
+
+// //Method
+// const jonas = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+
+// jonas.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+
+// //Method Borrowing
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge();
+
+// const f = jonas.calcAge;
+// f();
