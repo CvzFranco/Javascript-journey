@@ -42,7 +42,7 @@ class Person {
     this.lastName = lastName;
     this.firstName = firstName;
     this.age = age;
-    this.createdAt = new Date();
+    this.createdAt = new Date().toLocaleDateString();
   }
   hello() {
     console.log(`Hello ${this.firstName} ${this.lastName}`);
@@ -93,13 +93,36 @@ const diane = new Etudiant(
 
 // console.log(diane);
 // diane.getLevel();
-
 //Protype
-
 // console.log(typeof diane);
 // console.log(typeof franco);
 
 //Connaitre le prototype , modele à partir duquel franco à été crée et celui dont il a hérité.
 // console.log(Object.getPrototypeOf(diane));
-console.log(getHeritages(diane));
-console.log(getHeritages(franco));
+// console.log(getHeritages(diane));
+// console.log(getHeritages(franco));
+
+// document , window
+console.log(getHeritages(window));
+
+//Objects
+//keys
+console.log(Object.keys(diane));
+
+//values
+console.log(Object.values(diane));
+
+//entries
+console.log(Object.entries(diane));
+
+const getValues = (obj) => {
+  const content = Object.entries(obj);
+  content.forEach((tab) => {
+    let result = `${tab[0]} : ${tab[1]}`;
+    console.log(result);
+  });
+};
+getValues(diane);
+
+//Date
+//.toLocalDateString
