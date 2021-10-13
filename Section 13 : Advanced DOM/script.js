@@ -126,35 +126,58 @@ document.addEventListener('keydown', function (e) {
 ///////////////////////////////////////
 //Smooth Scrolling
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+// const btnScrollTo = document.querySelector('.btn--scroll-to');
+// const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+// btnScrollTo.addEventListener('click', function (e) {
+//   const s1coords = section1.getBoundingClientRect();
+//   console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+//   console.log(e.target.getBoundingClientRect());
 
-  console.log('CurrentScroll (X/Y)', window.pageXOffset, pageYOffset);
-  console.log(
-    'height / width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientHeight
-  );
+//   console.log('CurrentScroll (X/Y)', window.pageXOffset, pageYOffset);
+//   console.log(
+//     'height / width viewport',
+//     document.documentElement.clientHeight,
+//     document.documentElement.clientHeight
+//   );
 
-  //Scrolling
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset
-  // );
+//Scrolling
+// window.scrollTo(
+//   s1coords.left + window.pageXOffset,
+//   s1coords.top + window.pageYOffset
+// );
 
-  // Old Way
-  // window.scrollTo({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
+// Old Way
+// window.scrollTo({
+//   left: s1coords.left + window.pageXOffset,
+//   top: s1coords.top + window.pageYOffset,
+//   behavior: 'smooth',
+// });
 
-  // Modern Way
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+//   // Modern Way
+//   section1.scrollIntoView({ behavior: 'smooth' });
+// });
+
+//Types of Events and Event handlers // mdn event javascript
+
+//old school
+// h1.onmouseenter = function (e) {
+//   // like hover in css
+//   alert('addEventListener : Great !! You are Reaing the heading');
+// };
+
+//modern
+const h1 = document.querySelector('h1');
+// h1.addEventListener('mouseenter', function (e) {
+//   // like hover in css
+//   alert('addEventListener : Great !! You are Reaing the heading');
+// });
+
+const alertH1 = function (e) {
+  alert('addEventListener :  Great! You are reading the heading :D');
+};
+
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
