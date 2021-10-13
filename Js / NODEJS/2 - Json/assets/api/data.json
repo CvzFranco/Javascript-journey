@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Product 1",
+        "price": 5899,
+        "sold": true,
+        "category": "Sac",
+        "details": [
+            "detailsOne",
+            "detailsTwo",
+            "detailsThree",
+            "detailsFour"
+        ],
+        "other": {
+            "key" : "qsdqsf"
+        }
+    },
+    {
+        "name": "Product 1",
+        "price": 5899,
+        "sold": true,
+        "category": "Sac",
+        "details": [
+            "detailsOne",
+            "detailsTwo",
+            "detailsThree",
+            "detailsFour"
+        ],
+        "other": {
+            "key" : "qsdqsf"
+        }
+    },
+    {
+        "name": "Product 1",
+        "price": 5899,
+        "sold": true,
+        "category": "Sac",
+        "details": [
+            "detailsOne",
+            "detailsTwo",
+            "detailsThree",
+            "detailsFour"
+        ],
+        "other": {
+            "key" : "qsdqsf"
+        }
+    }
+]

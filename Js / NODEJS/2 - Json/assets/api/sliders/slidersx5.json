@@ -1,0 +1,65 @@
+[
+    {
+        "_id": "3582187104318",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/14.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "3617460806306",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/2.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "4737813331725",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/5.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "3372386523709",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/18.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "3359155194198",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/17.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "5896219746201",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/14.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "992464269852",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/8.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    }
+]

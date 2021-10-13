@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "3582187104318",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/14.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    },
+    {
+        "_id": "3617460806306",
+        "title": "Prendre RDV en ligne AVEC NOTRE EQUIPE",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae illum",
+        "bouttonMessage": "Prendre un RDV",
+        "imageUrl": "/assets/images/slider/2.png",
+        "createdAt": "01/08/2021 14:45:58",
+        "updateAt": null
+    }
+]
