@@ -1,12 +1,13 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+///////////////////////////////////////
+// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -27,6 +28,51 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
+  }
+});
+
+///////////////////////////////////////
+//Buttonk scrolling
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('CurrentScroll (X/Y)', window.pageXOffset, pageYOffset);
+  console.log(
+    'height / width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientHeight
+  );
+
+  // Modern Way
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+///////////////////////////////////////
+//Page Navigation
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+//Event delegation, More efficient
+//1 . Add event listener to comon parent element
+//2 . Determine what element originated the event;
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  //Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -168,16 +214,44 @@ document.addEventListener('keydown', function (e) {
 // };
 
 //modern
-const h1 = document.querySelector('h1');
-// h1.addEventListener('mouseenter', function (e) {
-//   // like hover in css
-//   alert('addEventListener : Great !! You are Reaing the heading');
+// const h1 = document.querySelector('h1');
+// // h1.addEventListener('mouseenter', function (e) {
+// //   // like hover in css
+// //   alert('addEventListener : Great !! You are Reaing the heading');
+// // });
+
+// const alertH1 = function (e) {
+//   alert('addEventListener :  Great! You are reading the heading :D');
+// };
+
+// h1.addEventListener('mouseenter', alertH1);
+
+// setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+//Bubbling and Capturing
+// Event propacation (Bubbling)
+
+//rgb(255,255,255)
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min - 1) + min);
+
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+// // console.log(randomColor());
+
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('Link', e.target, e.currentTarget); // e.target = where the event happened
+//   console.log(e.currentTarget === this);
+
+//   //Stop propagation
+//   // e.stopPropagation();
 // });
-
-const alertH1 = function (e) {
-  alert('addEventListener :  Great! You are reading the heading :D');
-};
-
-h1.addEventListener('mouseenter', alertH1);
-
-setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('Container', e.target, e.currentTarget);
+// });
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log('NAV', e.target, e.currentTarget);
+// });
