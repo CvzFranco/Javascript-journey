@@ -301,3 +301,162 @@ tesla.chargeBattery(90);
 console.log(tesla);
 tesla.accelerate();
 tesla.brake();
+
+////////////////////////////
+//Inheritance between "Classes" : ES6 Classes
+
+//class declaration
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+  //instance method
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name !`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+  //static method
+  static hey() {
+    console.log('Hey there');
+  }
+}
+
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    //Always needs to happen fiest!
+    super(fullName, birthYear);
+    this.course = course;
+  }
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `Ì'm ${
+        2037 - this.birthYear
+      } years old , but as a student I feel more like ${
+        2037 - this.birthYear + 10
+      }`
+    );
+  }
+}
+
+const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
+martha.introduce();
+martha.calcAge();
+
+//Inheritance between "Classes" : Objet Create
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+const StudentProto = Object.create(PersonProto);
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProto.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const jay = Object.create(StudentProto);
+jay.init('Jay', 2010, 'Computer Science');
+jay.introduce();
+jay.calcAge();
+
+//Another Class Example
+
+//1)Public fields
+//2)Private fields
+//3)Public Methods
+//4)Private Methods
+//(There is also the static version)
+class Account {
+  //1)Public fields(instances)
+  local = navigator.language;
+
+  //2) Private Fields(instances)
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.#pin = pin;
+    //Protected property
+    // this._movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account , ${owner}`);
+  }
+  //3)Public Methods
+  //Public interface of our object
+
+  getMovements() {
+    return this.#movements;
+  }
+  deposit(val) {
+    this.#movements.push(val);
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+  }
+
+  requestLoan(val) {
+    if (this.#approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan approved`);
+    }
+  }
+  static helper() {
+    console.log('Helper');
+  }
+  //4)Private Methods
+  #approveLoan(val) {
+    return true;
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1111);
+
+// acc1.movements.push(250);
+// acc1.movements.push(-140);
+// acc1._approveLoan(1000);
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
+console.log(acc1.getMovements);
+
+console.log(acc1);
+console.log(acc1.#approveLoan(100));
+// console.log(acc1.#movements);
+// console.log(acc1.#pin);
+Account.helper;
